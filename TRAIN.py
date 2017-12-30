@@ -18,8 +18,8 @@ import os
 import CheckVGG16Model
 import scipy.misc as misc
 #...........................................Input and output folders.................................................
-Train_Image_Dir="Data_Zoo/Materials_In_Vessels/Train_Images/" # Images and labels for training
-Train_Label_Dir="Data_Zoo/Materials_In_Vessels/LiquidSolidLabels/"# Annotetion in png format for train images and validation images (assume the name of the images and annotation images are the same (but annotation is always png format))
+Train_Image_Dir="Model_Zoo/Train/" # Images and labels for training
+Train_Label_Dir="Model_Zoo/Labels/"# Annotetion in png format for train images and validation images (assume the name of the images and annotation images are the same (but annotation is always png format))
 UseValidationSet=False# do you want to use validation set in training
 Valid_Image_Dir="Data_Zoo/Materials_In_Vessels/Test_Images_All/"# Validation images that will be used to evaluate training
 Valid_Labels_Dir="Data_Zoo/Materials_In_Vessels/LiquidSolidLabels/"#  (the  Labels are in same folder as the training set)
