@@ -5,9 +5,15 @@ import os
 import glob
 if not os.path.exists("Dataset"):
     os.makedirs("Dataset")
-os.chdir("../../IMAGES/Dataset")
-for file in glob.glob("*.*"):
+os.chdir("../../IMAGES/Labels")
+"""for file in glob.glob("*.*"):
     image=Image.open(file)
     name="../../Retina-segmentation-with-FCN/"+"Dataset/"+file.split(".")[0]+".png"
+    print name
+    image.save(name)"""
+
+for file in glob.glob("*.*"):
+    image=Image.open(file)
+    name="../../Retina-segmentation-with-FCN/"+"Labels/"+file.split(".")[0]+".png"
     print name
     image.save(name)

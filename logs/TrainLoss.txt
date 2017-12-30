@@ -1,0 +1,1 @@
+Iteration	loss	 Learning Rate=1e-05
