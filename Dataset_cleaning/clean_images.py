@@ -42,4 +42,26 @@ def contrast(path):
         name="Enhanced/"+file
         cv2.imwrite(name,enhanced)
 
-contrast("/home/omer/Desktop/omer/retina/Retina-segmentation-with-FCN/Dataset/")
+
+
+def rotation(input_image,input_label,output_image,output_label):
+    os.chdir(input_image)
+    for file in glob.glob("*.png"):
+        im=Image.open(file)
+        label_name=input_label+file
+        label= Image.open(label_name)
+
+        for i in range(360):
+            rotated_image=im.rotate(i,Image.BICUBIC)
+            rotated_label=label.rotate(i,Image.BICUBIC)
+            rot_im_name=output_image+str(i)+file
+            rot_label_name=output_label+str(i)+file
+
+            rotated_image.save(rot_im_name)
+            rotated_label.save(rot_label_name)
+        break
+
+rotation("/home/omer/Desktop/omer/retina/Retina-segmentation-with-FCN/Dataset/",
+"/home/omer/Desktop/omer/retina/Retina-segmentation-with-FCN/Labels/",
+"/home/omer/Desktop/omer/retina/Retina-segmentation-with-FCN/Train/",
+"/home/omer/Desktop/omer/retina/Retina-segmentation-with-FCN/Train_label/")
